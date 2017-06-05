@@ -1,0 +1,3 @@
+Read a file from Google Cloud Storage as a string into Jupyter notebooks (datalabs)
+
+%%storage read --object 'gs://<bucket>/<file_name>' --variable data
