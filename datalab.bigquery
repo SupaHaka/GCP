@@ -1,0 +1,8 @@
+Add data to BQ from a dataframe in jupyter notebooks (datalab)
+
+dataset = bq.Dataset('global_wholesale_sap_data')
+table = bq.Table('global_wholesale_sap_data' + '.' + 'Hemesh_Test')
+table_schema = bq.Schema.from_dataframe(df)
+table.create(schema = table_schema, overwrite = True)
+table.insert_data(df)
+
