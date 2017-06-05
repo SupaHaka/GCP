@@ -1,0 +1,3 @@
+Move file from Google Cloud Storage into local directory, to be ingested in to datalabs
+
+!gsutil cp gs://<bucket_name>/<file_name> .
