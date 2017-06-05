@@ -1,3 +1,3 @@
-Move file from Google Cloud Storage into local directory, to be ingested in to datalabs
+Move file from Google Cloud Storage into local directory (datalab), to be ingested in to jupyter notebooks
 
 !gsutil cp gs://<bucket_name>/<file_name> .
