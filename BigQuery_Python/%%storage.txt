@@ -1,0 +1,4 @@
+read from google cloud storage as string / text file:
+
+%%storage read --object 'gs://sap_data/Test_Data/TEXTTEST.txt' --variable data
+

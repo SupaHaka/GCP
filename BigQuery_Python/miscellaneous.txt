@@ -1,0 +1,16 @@
+Get basic metadata from bigquery: 
+
+import google.datalab.bigquery as bq
+from google.datalab import Context
+import pandas as pd
+
+datasets = bq.Datasets(Context('jlr-dl-dev', Context.default().credentials))
+sample_dataset = [dataset for dataset in datasets if UK_Analytics in dataset.name[1]]
+
+tables = sample_dataset[0].tables()
+out = []
+for table in tables
+    fields = map(lambda tsf tsf.name, table.schema)
+    name = table.name.table_id
+    rows = table.metadata.rows
+    out.append((name, fields, rowss))

@@ -1,0 +1,7 @@
+Run a SQL command and insert into DataFrame:
+
+import google.datalab.bigquery as bq
+
+BQ_Data = bq.Query(<SQL script, can be a python variable>)
+df = BQ_Data.execute(output_options=bq.QueryOutput.dataframe()).result()
+df.head(10)

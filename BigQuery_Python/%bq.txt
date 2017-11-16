@@ -1,0 +1,8 @@
+Get the columns name of tables:
+
+%bq tables describe -n 'global_wholesale_sap_data.FACT_Wholesale_Billing_Condition_EEP_backup'
+
+You can call the magic command in python, convert the notebook to a python file:
+get_iptyhon().magic(u"bq tables delete -n '<dataset>.<table>'")
+
+d
