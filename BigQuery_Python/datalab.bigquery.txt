@@ -1,8 +1,8 @@
 Add a Dataframe to Big Query
 
-dataset = bq.Dataset('global_wholesale_sap_data')
-table = bq.Table('global_wholesale_sap_data' + '.' + 'Hemesh_Test')
-table_schema = bq.Schema.from_dataframe(df)
+dataset = bq.Dataset('<dataset>')
+table = bq.Table('<dataset>' + '.' + '<table_name>')
+table_schema = bq.Schema.from_dataframe(<dataframe>)
 table.create(schema = table_schema, overwrite = True)
-table.insert_data(df)
+table.insert_data(<dataframe>)
 
