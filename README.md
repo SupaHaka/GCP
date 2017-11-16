@@ -1,3 +1,3 @@
 # GCP
 
-usefull commands that can be used to communicate with BQ via datalabs and some other useful scripts/commands
+useful commands that can be used to communicate with BQ via datalabs and some other useful scripts/commands
