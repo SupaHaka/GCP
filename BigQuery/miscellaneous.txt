@@ -1,0 +1,3 @@
+Parsing dates from string:
+
+PARSE_DATE('%Y-%m-%d', <column_name>)
