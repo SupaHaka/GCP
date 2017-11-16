@@ -1,5 +1,3 @@
 # GCP
 
-gsutil - scripts for using in datalabs
-%%storage - scripts for using in datalabs
-datalab.bigquery - scripts used in datalabs
+usefull commands that can be used to communicate with BQ via datalabs and some other useful scripts/commands
