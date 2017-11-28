@@ -2,6 +2,12 @@ Get the columns name of tables:
 
 %bq tables describe -n '<dataset>.<table_name>'
 
+
 You can call the magic command in python, convert the notebook to a python file:
+
 get_iptyhon().magic(u"bq tables delete -n '<dataset>.<table>'")
 
+
+Make a copy of BQ table in Google Cloud Storage:
+
+get_ipython().magic(u'bq extract -c -t 2017_VIN_Profit_US_UAT.Final_US_Vin_Prof_Column_Names -p <path_in_gcs>')
