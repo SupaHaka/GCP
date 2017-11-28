@@ -1,0 +1,9 @@
+read from google cloud storage as string / text file:
+
+%storage read --object 'gs://<Bucket>/<file>' --<python_variable>
+get_iptyhon().magic(u'storage read --object<full_gcs_path> --variable <ptyhon_variable>')
+
+save dataframe to google cloud storage as csv:
+
+get_ipython().magic(u'storage wirte --variable <simple_dateframe> --object<location_of_where_you_want_the_df_to_be_saved>')
+

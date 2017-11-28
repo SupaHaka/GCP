@@ -1,4 +1,0 @@
-read from google cloud storage as string / text file:
-
-%storage read --object 'gs://<Bucket>/<file>' --<python_variable>
-
