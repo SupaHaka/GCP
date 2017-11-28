@@ -10,4 +10,4 @@ get_iptyhon().magic(u"bq tables delete -n '<dataset>.<table>'")
 
 Make a copy of BQ table in Google Cloud Storage:
 
-get_ipython().magic(u'bq extract -c -t 2017_VIN_Profit_US_UAT.Final_US_Vin_Prof_Column_Names -p <path_in_gcs>')
+get_ipython().magic(u'bq extract -c -t <dataset>.<table> -p <path_in_gcs>')
