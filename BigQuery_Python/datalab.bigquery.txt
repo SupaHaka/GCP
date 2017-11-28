@@ -1,4 +1,5 @@
 Add a Dataframe to Big Query
+import datalab.bigquery as bq
 
 df = <dataframe> # a pandas dataframe
 
@@ -8,3 +9,7 @@ table_schema = bq.Schema.from_dataframe(df) # define schema of dataframe
 table.create(schema = table_schema, overwrite = True)
 table.insert_data(df)
 
+
+Alternative way of adding pandas dataframe to BQ:
+
+df.to_gbq('<dataset.table>', '<project_id>', if_exists = <'replace', 'fail', 'append'>)
