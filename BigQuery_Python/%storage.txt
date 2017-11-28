@@ -1,9 +1,19 @@
-read from google cloud storage as string / text file:
+Read from Google Cloud Storage as string / text file:
 
 %storage read --object 'gs://<Bucket>/<file>' --<python_variable>
 get_iptyhon().magic(u'storage read --object<full_gcs_path> --variable <ptyhon_variable>')
 
-save dataframe to google cloud storage as csv:
+
+Save dataframe to Google Cloud Storage as csv:
 
 get_ipython().magic(u'storage wirte --variable <simple_dateframe> --object<location_of_where_you_want_the_df_to_be_saved>')
 
+
+Copy object in Google Cloud Storage:
+
+get_ipython().magic(u'storage copy -s <path in gcs that you want to copy> -d <paht is gcs that you want to make the copy>')
+
+
+Delete object in Google Cloud Storage:
+
+get_ipython().magic(u'storage delete -o <delete object (file) in gcs>')
