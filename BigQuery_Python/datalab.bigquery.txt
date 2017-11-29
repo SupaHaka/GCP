@@ -5,9 +5,9 @@ df = <dataframe> # a pandas dataframe
 
 dataset = bq.Dataset('<dataset>')  # define dataset
 table = bq.Table('<dataset>' + '.' + '<table_name>') # define table path in BQ
-table_schema = bq.Schema.from_dataframe(df) # define schema of dataframe
+table_schema = bq.Schema.from_data(df) # define schema of dataframe
 table.create(schema = table_schema, overwrite = True)
-table.insert_data(df)
+table.insert(df)
 
 
 Alternative way of adding pandas dataframe to BQ:
