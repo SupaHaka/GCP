@@ -1,3 +1,8 @@
-Move file from Google Cloud Storage into local directory (datalab), to be ingested in to jupyter notebooks
+Copy file from Google Cloud Storage into local directory (datalab), to be ingested in to jupyter notebooks
 
 !gsutil cp gs://<bucket_name>/<file_name> .
+
+
+Move files within Google Cloud Storage:
+
+gsutil mv gs://<source_path_to_object> gs://<destination_path_to_object>
