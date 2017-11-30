@@ -11,7 +11,7 @@ get_ipython().magic(u'storage wirte --variable <simple_dateframe> --object<locat
 
 Copy object in Google Cloud Storage:
 
-get_ipython().magic(u'storage copy -s <path in gcs that you want to copy> -d <paht is gcs that you want to make the copy>')
+get_ipython().magic(u'storage copy -s <path in gcs that you want to copy> -d <path is gcs that you want to make the copy>')
 
 
 Delete object in Google Cloud Storage:
