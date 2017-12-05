@@ -10,6 +10,6 @@ table.create(schema = table_schema, overwrite = True)
 table.insert(df)
 
 
-Alternative way of adding pandas dataframe to BQ:
+Alternative way of adding pandas dataframe to BQ table (table must exist):
 
 df.to_gbq('<dataset.table>', '<project_id>', if_exists = <'replace', 'fail', 'append'>)
