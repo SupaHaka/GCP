@@ -1,8 +1,0 @@
-Read an excel file from google cloud storage into a dataframe
-
-from StringIO import StringIO
-import pandas as pd
-
-%gcs read -oo '<path_to_object_in_google_cloud_storage>' -v <assign_it_to_a_python_variable>
-buffer = StringIO(assign_it_to_a_python_variable)
-df = pd.read_excel(buffer)
