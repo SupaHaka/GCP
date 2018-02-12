@@ -1,0 +1,24 @@
+Create a backup of an existing table in BQ:
+
+from google.cloud import bigquery
+def create_back_up(dataset, source_table, destination_table):
+    """This function will create a backup of a table.
+    Takes 3 arguments: dataset, source table, destination table respectively.
+    """
+    client = bigquery.Client()
+    source_dataset = bigquery.DatasetReference(
+        '<project_ID>', dataset) # Project ID might need changing
+    source_table_ref = source_dataset.table(source_table)
+
+    dest_dataset = bigquery.Dataset(client.dataset(dataset)) 
+    dest_table_ref = dest_dataset.table(destination_table)
+
+    job_config = bigquery.CopyJobConfig()
+    job = client.copy_table(
+        source_table_ref, dest_table_ref, job_config=job_config)  # API request
+    job.result()  # Waits for job to complete.
+
+    assert job.state == 'DONE'
+    dest_table = client.get_table(dest_table_ref)  # API request
+    return 'A backup of {} has been created'.format(source_table)
+create_back_up('<dataset>', '<table to copy>', '<name of copied table>')
