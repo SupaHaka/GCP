@@ -18,6 +18,6 @@ df.to_gbq('<dataset.table>', '<project_id>', if_exists = <'replace', 'fail', 'ap
 
 # We can connect BigQuery to Pandas Dataframe
 
-import google.datalab.bigquery as bq
-SQL = <SQL code to read table in BQ>
-df = bq.Query(SQL)
+import pandas a pd
+SQL = <SQL Code> # Must include full path to table
+df = pd.read_gbq(SQL, project_id = '<>', dialect='[standard,legacy]') 
