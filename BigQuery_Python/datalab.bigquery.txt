@@ -20,4 +20,4 @@ df.to_gbq('<dataset.table>', '<project_id>', if_exists = <'replace', 'fail', 'ap
 
 import google.datalab.bigquery as bq
 SQL = <SQL code to read table in BQ>
-df = BQ_Data = bq.Query(SQL)
+df = bq.Query(SQL)
