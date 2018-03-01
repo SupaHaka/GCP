@@ -1,0 +1,17 @@
+# You can connect googlesheets to datalabs
+# The json file must be created from API services and created a python service account key
+# The json file must me in the same directory as the script in which you are using it
+
+# Set up credentials and client for reading from googlesheets
+scope = ['https://spreadsheets.google.com/feeds']
+
+credentials = ServiceAccountCredentials.from_json_keyfile_name('jlr-dl-cat-2917dd75d954.json', scope)
+
+client = gspread.authorize(credentials)
+
+# Note there is an email in the json file, you must share the googlesheet witht his client email.
+
+# Set up credentials and client for reading from googlesheets
+workbook_name = client.open('<name_of_googlesheet>').sheet1 # This method only works on the first sheet
+data = workbook_name.get_all_records() #This variable is in JSON 
+df = pd.DataFrame(data)
