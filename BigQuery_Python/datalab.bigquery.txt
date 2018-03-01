@@ -1,6 +1,6 @@
-Add a Dataframe to Big Query
-import datalab.bigquery as bq
+#Add a Dataframe to Big Query
 
+import datalab.bigquery as bq
 df = <dataframe> # a pandas dataframe
 
 dataset = bq.Dataset('<dataset>')  # define dataset
@@ -10,6 +10,14 @@ table.create(schema = table_schema, overwrite = True)
 table.insert(df)
 
 
-Alternative way of adding pandas dataframe to BQ table (table must exist):
+#Alternative way of adding pandas dataframe to BQ table (table must exist):
 
 df.to_gbq('<dataset.table>', '<project_id>', if_exists = <'replace', 'fail', 'append'>)
+
+***Adjust the above so we are saving the dataframe to GCS and then loading csv from GCS to BQ***
+
+# We can connect BigQuery to Pandas Dataframe
+
+import google.datalab.bigquery as bq
+SQL = <SQL code to read table in BQ>
+df = BQ_Data = bq.Query(SQL)
