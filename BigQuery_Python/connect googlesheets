@@ -5,7 +5,7 @@
 # Set up credentials and client for reading from googlesheets
 scope = ['https://www.googleapis.com/auth/drive']
 
-credentials = ServiceAccountCredentials.from_json_keyfile_name('jlr-dl-cat-2917dd75d954.json', scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name('<json_file_with_api_key>', scopes = scope)
 
 client = gspread.authorize(credentials)
 
