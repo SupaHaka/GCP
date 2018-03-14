@@ -1,6 +1,7 @@
-Create a backup of an existing table in BQ:
+#Create a backup of an existing table in BQ:
 
 from google.cloud import bigquery
+
 def create_back_up(dataset, source_table, destination_table):
     """This function will create a backup of a table.
     Takes 3 arguments: dataset, source table, destination table respectively.
@@ -22,3 +23,26 @@ def create_back_up(dataset, source_table, destination_table):
     dest_table = client.get_table(dest_table_ref)  # API request
     return 'A backup of {} has been created'.format(source_table)
 create_back_up('<dataset>', '<table to copy>', '<name of copied table>')
+
+
+#Create a new table in BQ from a SQL query
+
+from google.cloud import bigquery
+
+client = bigquery.Client()
+job_config = bigquery.QueryJobConfig()
+
+# Set the destination table. Here, dataset_id is a string, such as:
+# dataset_id = 'your_dataset_id'
+table_ref = client.dataset('<dataset_name>').table('<table_name>')
+job_config.destination = table_ref
+
+# The write_disposition specifies the behavior when writing query results
+# to a table that already exists. With WRITE_TRUNCATE, any existing rows
+# in the table are overwritten by the query results.
+job_config.write_disposition = 'WRITE_APPEND' # Different options [WRITE_TRUNCATE, WRITE_APPEND]
+
+SQL = '<SQL_statement>'
+# Start the query, passing in the extra configuration.
+query_job = client.query(SQL, job_config=job_config)
+
