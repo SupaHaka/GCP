@@ -13,9 +13,20 @@ get_ipython().system('gsutil cp ' + <file_name.csv> + ' ' + <gcs/path/>)
 
 # Copy object in Google Cloud Storage:
 
-get_ipython().magic(u'storage copy -s <path in gcs that you want to copy> -d <path is gcs that you want to make the copy>')
+import google.datalab.storage as storage
+
+bucket = '<top_level_bucket>' e.g 'hpatel'
+old_key = '<path_to_file_to_be_copied>' e.g 'data_raw/file_name.csv'
+new_key = '<path_to_new_location_of_file>' e.g 'data_clean/file_name.csv'
+
+storage.Object(bucket, old_key).copy_to(new_key)
 
 
 # Delete object in Google Cloud Storage:
 
-get_ipython().magic(u'storage delete -o <delete object (file) in gcs>')
+import google.datalab.storage as storage
+
+bucket = '<top_level_bucket>' e.g 'hpatel'
+old_key = '<path_to_file_to_be_deleted>' e.g 'data_raw/file_name.csv'
+
+storage.Object(bucket,old_key).delete()
