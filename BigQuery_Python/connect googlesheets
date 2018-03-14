@@ -3,7 +3,7 @@
 # The json file must me in the same directory as the script in which you are using it
 
 # Set up credentials and client for reading from googlesheets
-scope = ['https://spreadsheets.google.com/feeds']
+scope = ['https://www.googleapis.com/auth/drive']
 
 credentials = ServiceAccountCredentials.from_json_keyfile_name('jlr-dl-cat-2917dd75d954.json', scope)
 
