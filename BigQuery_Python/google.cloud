@@ -46,3 +46,13 @@ SQL = '<SQL_statement>'
 # Start the query, passing in the extra configuration.
 query_job = client.query(SQL, job_config=job_config)
 
+#Save dataframe to google cloud storage
+
+from google.cloud import storage
+
+storage_client = storage.Client(project='<>') # create the storage client
+bucket = storage_client.get_bucket('<top_level_bucket>') # Identify the top level bucket
+destination_blob = bucket.blob('<full_path_plus_file_name>') # create the key to above bucket
+
+file = df_final.to_csv(index=False) # save the dataframe to a variable
+destination_blob.upload_from_string(file) # write the dataframe variable to bucket as a string
