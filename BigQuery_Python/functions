@@ -1,0 +1,56 @@
+table_id = <to be a global variable>
+dataset_id = <to be a global variable>
+
+
+def sql_column_criteria(lst, col_fil, cell_val): #Note these can be arguments 
+  """
+  Returns SQL statement
+  
+  The SQL statement returned is determined by:
+  :param lst: columns to be shown
+  :param col_fil: the column you want to filter for SQL WHERE clause
+  :param ser: the search cretia, the value of the column.
+  
+  :type arg: list
+  :type col_fil: string
+  :type ser: string
+  
+  :rtype: string
+  """
+  lenght = len(lst)
+  coma_sep = ','.join(lst)
+  SQL = 
+  """
+      SELECT
+        {}
+      FROM
+        `{}.{}`
+      WHERE {} = {}
+  """.format(coma_sep, dataset_id, table_id, col_fil, cel_val)
+  
+  return SQL
+  
+  def sql_join_table(table_a, table_b, join_type, on_clause, key_a, key_b):
+    if 'left' in join_type:
+      join_type = join_type.upper()
+      SQL = 
+          """
+              SELECT 
+                *
+              FROM
+                `{}.{}` A
+              {} 
+                `{}.{}` B
+              ON 
+                A.{} = B.{}
+              WHERE
+                A.{} IS NULL
+              
+          """.format(dataset_id, table_a, join_type, dataset_id, table_b, key_a, key_b, key_a)
+      
+    elif 'right' in join_type:
+      code
+    elif 'inner' in join_type:
+      code
+    else: 
+      Return 'This function refuses to take your silly join clause. Dogshit ---> {}'.format(join_type)
