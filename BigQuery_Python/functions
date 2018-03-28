@@ -30,27 +30,27 @@ def sql_column_criteria(lst, col_fil, cell_val): #Note these can be arguments
   
   return SQL
   
-  def sql_join_table(table_a, table_b, join_type, on_clause, key_a, key_b):
-    if 'left' in join_type:
-      join_type = join_type.upper()
-      SQL = 
-          """
-              SELECT 
-                *
-              FROM
-                `{}.{}` A
-              {} 
-                `{}.{}` B
-              ON 
-                A.{} = B.{}
-              WHERE
-                A.{} IS NULL
+def sql_join_table(table_a, table_b, join_type, on_clause, key_a, key_b):
+  if 'left' in join_type:
+    join_type = join_type.upper()
+    SQL = 
+        """
+            SELECT 
+              *
+            FROM
+              `{}.{}` A
+            {} 
+              `{}.{}` B
+            ON 
+              A.{} = B.{}
+            WHERE
+              A.{} IS NULL
               
-          """.format(dataset_id, table_a, join_type, dataset_id, table_b, key_a, key_b, key_a)
+        """.format(dataset_id, table_a, join_type, dataset_id, table_b, key_a, key_b, key_a)
       
-    elif 'right' in join_type:
-      code
-    elif 'inner' in join_type:
-      code
-    else: 
-      Return 'This function refuses to take your silly join clause. Dogshit ---> {}'.format(join_type)
+  elif 'right' in join_type:
+    code
+  elif 'inner' in join_type:
+    code
+  else: 
+    Return 'This function refuses to take your silly join clause. Dogshit ---> {}'.format(join_type)
