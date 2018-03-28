@@ -19,14 +19,13 @@ def sql_column_criteria(lst, col_fil, cell_val): #Note these can be arguments
   """
   lenght = len(lst)
   coma_sep = ','.join(lst)
-  SQL = 
-  """
-      SELECT
-        {}
-      FROM
-        `{}.{}`
-      WHERE {} = {}
-  """.format(coma_sep, dataset_id, table_id, col_fil, cel_val)
+  SQL = """
+          SELECT
+            {}
+          FROM
+            `{}.{}`
+          WHERE {} = {}
+      """.format(coma_sep, dataset_id, table_id, col_fil, cell_val)
   
   return SQL
   
